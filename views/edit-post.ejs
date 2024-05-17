@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+        body{
+    background-color: rgb(240, 240, 240);
+}
+header,footer{
+    text-align: center;
+    background-color: rgb(48, 43, 43);
+    color: white;
+    padding: 10px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+li{
+    list-style: none;
+   
+}
+a{
+   text-decoration: none; 
+   color: white;
+}
+img{
+    height: 200px;
+    width: 350px;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+}
+label,button{
+    display: block;
+    margin-top: 20px;
+}
+.form{
+    padding: 10px;
+    /* padding-left: 10%; */
+}
+input,textarea{
+    width: 90%;
+}
+.new-post{
+    width: 95%;
+    margin: 20px auto;
+    background-color:white;
+    border-radius: 10px;
+    
+}
+
+.description{
+    padding: 10px;
+}
+.buttons{
+    width: 100%;
+    margin: 0px auto;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0.2px 0.2px ;
+   
+}
+
+.edit{
+    padding: 5px 10px;
+    background-color: blue;
+    border-color: blue;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px;
+}
+    </style>
+    
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+   <div class="new-post">
+    <form class="form" action="/edit/<%= data.id %>" method="post" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input  name="title" type="text" value="<%= data.title %>"  required>
+
+        <label for="body">Body:</label>
+        <textarea name="body" id="body" cols="30" rows="2"   required><%= data.body %></textarea>
+        <label >Current Image:</label>
+        <img src="<%= data.image %>" id="pro-img" alt="">
+        <label for="image">Change Image:</label>
+        <input name="image" id="image" type="file"  value="<%= data.image %>" reguired >
+        <button class="edit" type="submit"> submit</button>
+    </form>
+   </div>
+   <%- include("partials/footer.ejs") %>
+
+   <script>
+    let proImg = document.getElementById("pro-img");
+    let inputFile = document.getElementById("image");
+
+    inputFile.onchange = function(){
+        proImg.src = URL.createObjectURL(inputFile.files[0])
+    };
+   </script>
+</body>
+</html>

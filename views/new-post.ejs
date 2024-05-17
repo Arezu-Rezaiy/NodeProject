@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>New Post</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+   <div class="new-post">
+    <form class="form" action="/submit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id">
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" value="" required>
+
+        <label for="body">Body:</label>
+        <textarea name="body" id="body" cols="30" rows="2"  placeholder="Type here..." required></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input id="image" type="file" name="image" value="" accept="image/jpej, image/png, image/jpg" reguired>
+        <img src="images/placeholder.png" alt="" name="image" id="pro-img">
+        <button class="edit" type="submit"> submit</button>
+    </form>
+   </div>
+   <%- include("partials/footer.ejs") %>
+   <script>
+    let proImg = document.getElementById("pro-img");
+    let inputFile= document.getElementById("image");
+
+    inputFile.onchange = function(){
+        proImg.src = URL.createObjectURL(inputFile.files[0])
+    };
+   </script>
+    
+</body>
+</html>

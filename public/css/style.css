@@ -1,0 +1,114 @@
+body{
+    background-color: rgb(240, 240, 240);
+    position: relative;
+}
+header,footer{
+    text-align: center;
+    background-color: rgb(48, 43, 43);
+    color: white;
+    padding: 10px;
+}
+.message{
+    width: 15%;
+    background-color: rgb(235, 49, 49);
+    padding: 10px 5px;
+    text-align: center;
+    position: absolute;
+   top: 40px;
+   right: 50px;
+   border-radius: 20px;
+   visibility: hidden;
+}
+.add{
+    width: 15%;
+    background-color: rgb(10, 194, 10);
+    padding: 10px 5px;
+    text-align: center;
+    position: absolute;
+   top: 40px;
+   right: 50px;
+   border-radius: 20px;
+   visibility: hidden;
+}
+.show{
+    visibility: visible;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+li{
+    list-style: none;
+   
+}
+a{
+   text-decoration: none; 
+   color: white;
+}
+img{
+    height: 200px;
+    width: 350px;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+}
+label,button{
+    display: block;
+    margin-top: 20px;
+}
+.form{
+    padding: 10px;
+    /* padding-left: 10%; */
+}
+input,textarea{
+    width: 90%;
+}
+.new-post{
+    width: 95%;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+.post{
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0px auto 30px;
+  padding: 0px 20px;
+  padding-bottom: 30px;
+  box-shadow: 0.5px 0.5px;
+
+}
+.description{
+    padding: 10px;
+}
+h3,p{
+    padding-left: 30px;
+}
+.buttons{
+    width: 100%;
+    margin: 0px auto;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0.2px 0.2px ;
+   
+}
+.edit{
+    padding: 5px 10px;
+    background-color: blue;
+    border-color: blue;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px;
+}
+.delete{
+    padding: 5px 15px;
+    background-color:red;
+    border-color: red;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 10px 0px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home page</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+
+    <div class="message " id="message"> 
+        Deleted successfully.
+    </div>
+
+
+    <h3>LATEST POST</h3>
+    <% datas.forEach(data => {%>
+    <div class="post">
+    <div class="description" >
+        <h3><%= data.title %></h3> 
+         <p><%= data.body %></p> 
+         <img  src="<%= data.image %>" alt=""> 
+
+    </div>
+    
+    <div class="buttons">
+       <form action="/edit-post/<%= data.id %>" enctype="multipart/form-data">
+        <button class="edit">Edit</button>
+       </form>
+       <form action="/delete/<%= data.id %>" method="POST" >
+        <button name="delete" type="submit" class="delete" id="deleting" >Delete</button>
+       </form>
+       
+    </div>
+    
+    </div>
+    <% }); %>
+   
+    <%- include("partials/footer.ejs") %>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
